@@ -4,7 +4,9 @@ function App() {
 
   return (
     <>
-      <div>Simple App</div>
+      <div className='bg-gray-400 text-5xl flex justify-center items-center h-screen'>
+        Simple App
+      </div>
     </>
   )
 }
