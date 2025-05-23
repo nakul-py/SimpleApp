@@ -10,5 +10,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import ProtectedContainer from "./AuthLayout";
 import Select from "./Select";
+import RTE from "./RTE";
+import PostForm from "./post-form/Postform";
 
-export { Header, Footer, Container, Logo, LogoutBtn, Button , Input, PostCard, Login, SignUp, ProtectedContainer, Select };
+export { Header, Footer, Container, Logo, LogoutBtn, Button , Input, PostCard, Login, SignUp, ProtectedContainer, Select , RTE, PostForm };
