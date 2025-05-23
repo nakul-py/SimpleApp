@@ -2,7 +2,7 @@ import React from "react";
 import service from "../appwrite/config";
 import { Link } from "react-router-dom";
 
-function Postcard({ $id, title, featuredImage }) {
+function PostCard({ $id, title, featuredImage }) {
   const imageUrl = featuredImage? service.getFilePreview(featuredImage) : null
 
   return (
@@ -18,4 +18,4 @@ function Postcard({ $id, title, featuredImage }) {
   );
 }
 
-export default Postcard;
+export default PostCard;
