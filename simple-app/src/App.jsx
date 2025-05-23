@@ -33,7 +33,7 @@ function App() {
     <div className='w-full block'>
       <Header/>
       <main>
-        {/* Todooo: <Outlet/> */}
+        Todooo: <Outlet/>
       </main>
       <Footer/>
     </div>
