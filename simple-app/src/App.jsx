@@ -1,7 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import authService from "./appwrite/auth"
+import authservice from "./appwrite/auth"
 import { login, logout } from './store/authslice'
 import {Header, Footer} from "../src/components/index"
 import { Outlet } from 'react-router-dom'
@@ -11,10 +11,10 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    authService.getCurrentUser()
-    .then((user) => {
-      if (user) {
-        dispatch(login({ user }))
+    authservice.getCurrentUser()
+    .then((userdata) => {
+      if (userdata) {
+        dispatch(login({ userdata }))
       } else {
         dispatch(logout())
       }
@@ -33,7 +33,7 @@ function App() {
     <div className='w-full block'>
       <Header/>
       <main>
-        Todooo: <Outlet/>
+        Posts: <Outlet/>
       </main>
       <Footer/>
     </div>
