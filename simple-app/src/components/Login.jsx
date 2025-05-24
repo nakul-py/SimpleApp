@@ -4,7 +4,7 @@ import { login as authLogin } from "../store/authslice";
 import { Button, Logo, Input } from "./index";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import authService from "../appwrite/auth";
+import authservice from "../appwrite/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function Login() {
@@ -17,9 +17,9 @@ function Login() {
   const login = async (data) => {
     setError("");
     try {
-      const session = await authService.login(data);
+      const session = await authservice.login(data);
       if (session) {
-        const userData = await authService.getCurrentUser();
+        const userData = await authservice.getCurrentUser();
         if (userData) {
           dispatch(authLogin(userData));
           navigate("/");
@@ -47,7 +47,7 @@ function Login() {
           Don&apos;t have any account?&nbsp;
           <Link
             to="/signup"
-            className="font-medium text-primary transistion-all duration-200 hover:underline"
+            className="font-medium text-primary transistion-all duration-200 hover:underline hover:text-blue-600"
           >
             Sign Up
           </Link>
@@ -81,7 +81,7 @@ function Login() {
               </span>
             </Input>
             <Button
-              className="font-medium text-2xl text-primary transistion-all duration-200 hover:underline"
+              className="font-medium text-2xl text-primary transistion-all duration-200 hover:underline  hover:text-yellow-400"
               type="submit"
             >
               Sign In
