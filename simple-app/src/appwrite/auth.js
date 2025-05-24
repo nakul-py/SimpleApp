@@ -43,8 +43,9 @@ export class Authservice {
     try {
       return await this.account.get();
     } catch (error) {
-      console.error("Error getting current user:", error);
+      console.error("Error fetching current user:", error);
     }
+    return null
   }
 
   async logout() {
