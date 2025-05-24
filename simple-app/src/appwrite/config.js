@@ -3,7 +3,7 @@ import { Client, ID, Databases, Storage, Query, Messaging } from "appwrite";
 
 export class Service {
   client = new Client();
-  database;
+  databases;
   storage;
   messaging;
 
@@ -11,14 +11,14 @@ export class Service {
     this.client
       .setEndpoint(conf.appwriteEndpoint)
       .setProject(conf.appwriteProjectId);
-    this.database = new Databases(this.client);
+    this.databases = new Databases(this.client);
     this.storage = new Storage(this.client);
     this.messaging = new Messaging(this.client);
   }
 
   async createPost({ title, featuredImage, content, status, userid, message }) {
     try {
-      return await this.database.createDocument(
+      return await this.databases.createDocument(
         conf.appwriteDatabaseId,
         conf.appwritePostCollectionId,
         ID.unique(),
@@ -39,7 +39,7 @@ export class Service {
 
   async updatePost(postId, { title, featuredImage, content, message, status }) {
     try {
-      return await this.database.updateDocument(
+      return await this.databases.updateDocument(
         conf.appwriteDatabaseId,
         conf.appwritePostCollectionId,
         postId,
@@ -59,7 +59,7 @@ export class Service {
 
   async deletePost(postId) {
     try {
-      return await this.database.deleteDocument(
+      return await this.databases.deleteDocument(
         conf.appwriteDatabaseId,
         conf.appwritePostCollectionId,
         postId
@@ -72,7 +72,7 @@ export class Service {
 
   async getPost(postId) {
     try {
-      return await this.database.getDocument(
+      return await this.databases.getDocument(
         conf.appwriteDatabaseId,
         conf.appwritePostCollectionId,
         postId
@@ -85,7 +85,7 @@ export class Service {
 
   async getPosts(queries = [Query.equal("status", "active")]) {
     try {
-      return await this.database.listDocuments(
+      return await this.databases.listDocuments(
         conf.appwriteDatabaseId,
         conf.appwritePostCollectionId,
         queries
