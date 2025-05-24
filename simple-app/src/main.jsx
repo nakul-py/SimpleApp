@@ -6,15 +6,8 @@ import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { ProtectedContainer, Login } from "./components/index.js";
-import {
-  Addposts,
-  Allposts,
-  Home,
-  Posts,
-  SignUp,
-  Editposts,
-} from "./pages/index.js";
+import { AuthLayout, Login } from "./components/index.js";
+import { Addposts, Allposts, Editposts, Home, Posts, SignUp } from "./pages/index.js";
 
 const router = createBrowserRouter([
   {
@@ -28,49 +21,49 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: (
-          <ProtectedContainer authentication={false}>
+          <AuthLayout authentication={false}>
             <Login />
-          </ProtectedContainer>
+          </AuthLayout>
         )
       },
       {
         path: "/signup",
         element: (
-          <ProtectedContainer authentication={false}>
+          <AuthLayout authentication={false}>
             <SignUp />
-          </ProtectedContainer>
+          </AuthLayout>
         )
       },
       {
         path: "/all-posts",
         element: (
-          <ProtectedContainer>
+          <AuthLayout>
             <Allposts />
-          </ProtectedContainer>
+          </AuthLayout>
         )
       },
       {
         path: "/add-posts",
         element: (
-          <ProtectedContainer>
+          <AuthLayout>
             <Addposts />
-          </ProtectedContainer>
+          </AuthLayout>
         )
       },
       {
         path: "/posts/:id",
         element: (
-          <ProtectedContainer>
+          <AuthLayout>
             <Posts />
-          </ProtectedContainer>
+          </AuthLayout>
         )
       },
       {
         path: "/edit-posts/:id",
         element: (
-          <ProtectedContainer>
+          <AuthLayout>
             <Editposts />
-          </ProtectedContainer>
+          </AuthLayout >
         )
       }
     ],
