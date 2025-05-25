@@ -19,7 +19,7 @@ function PostForm({ post }) {
       },
     });
 
-  const userData = useSelector((state) => state.auth.userData);
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -30,7 +30,7 @@ function PostForm({ post }) {
         console.log("Submitted Data:", data);
         const file =
           data.image && data.image.length > 0
-            ? await service.uploadFile(data.image[0])
+            ? await service.createFile(data.image[0])
             : null;
 
         if (file) {
@@ -49,12 +49,12 @@ function PostForm({ post }) {
       } else {
         const file =
           data.image && data.image.length > 0
-            ? await service.uploadFile(data.image[0])
+            ? await service.createFile(data.image[0])
             : null;
 
         const postPayload = {
           ...data,
-          userId: userData.$id,
+          userId: user.$id,
           featuredImage: file ? file.$id : null,
         };
 
@@ -97,8 +97,9 @@ function PostForm({ post }) {
       <div className="w-2/3 px-2">
         <Input
           label="Title :"
-          placeholder="Title"
-          className="mb-4"
+          placeholder="Enter image title"
+          className="mb-4 "
+          textarea
           {...register("title", { required: true })}
         />
         <Input
@@ -114,8 +115,9 @@ function PostForm({ post }) {
         />
         <Input
           label="Message :"
-          placeholder="Message"
+          placeholder="Type your message"
           className="mb-4"
+          textarea
           {...register("message", { required: true })}
         />
         <RTE
@@ -152,7 +154,7 @@ function PostForm({ post }) {
           type="submit"
           disabled={isSubmitting}
           bgColor={post ? "bg-green-500" : undefined}
-          className="w-full "
+          className="w-full hover:bg-lime-500 text-white font-bold text-lg transition-all duration-200 disabled:opacity-50"
         >
           {isSubmitting ? (
             <>
