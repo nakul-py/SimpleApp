@@ -12,7 +12,7 @@ function Allposts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const allPosts = await service.getPostss();
+        const allPosts = await service.getPosts();
         dispatch(setPosts(allPosts.documents));
       } catch (err) {
         console.error("Failed to fetch posts", err);
@@ -39,7 +39,7 @@ function Allposts() {
       <Container>
         <div className="flex flex-wrap">
           {posts.map((post) => (
-            <div key={post.$id} className="py-2 w-1/4">
+            <div key={post.$id} className="w-screen sm:w-1/2 lg:w-1/3 px-2 ">
               <PostCard {...post} />
             </div>
           ))}
