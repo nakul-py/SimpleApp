@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import authService from "../appwrite/auth";
+import authservice from "../appwrite/auth";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Button, Logo, Input } from "./index";
@@ -17,11 +17,11 @@ function SignUp() {
   const create = async (data) => {
     setError("");
     try {
-      const userrData = await authService.createAccount(data);
+      const userrData = await authservice.createAccount(data);
       if (userrData) {
-        const userData = await authService.getCurrentUser();
-        if (userData) {
-          dispatch(authlogiN(userData));
+        const user = await authservice.getCurrentUser();
+        if (user) {
+          dispatch(authlogiN(user));
           navigate("/");
         }
       }
@@ -46,7 +46,7 @@ function SignUp() {
           Already have an account?&nbsp;
           <Link
             to="/login"
-            className="font-medium text-primary transition-all duration-200 hover:underline"
+            className="font-medium text-primary transition-all duration-200 hover:underline  hover:text-blue-600"
           >
             Sign In
           </Link>
