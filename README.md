@@ -2,7 +2,7 @@
 
 ## Introduction
 
-SimpleApp is a lightweight and easy-to-use application where user can save there images with messages.
+SimpleApp is a lightweight and easy-to-use application where user can save there images with messages, Login, Logout, Signup, SignIn.
 
 ## Features
 
