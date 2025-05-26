@@ -16,7 +16,7 @@ export class Service {
     this.messaging = new Messaging(this.client);
   }
 
-  async createPost({ title, featuredImage, content, status, userid, message }) {
+  async createPost({ title, featuredImage, content, status, userId, message }) {
     try {
       return await this.databases.createDocument(
         conf.appwriteDatabaseId,
@@ -27,7 +27,7 @@ export class Service {
           featuredImage,
           content,
           status,
-          userid,
+          userId,
           message,
         }
       );
