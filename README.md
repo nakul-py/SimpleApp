@@ -1,117 +1,34 @@
 # SimpleApp
 
-#  Create React projects with Vite and Tailwindcss
+## Introduction
 
-```
-npm create vite@latest
-```
-### Follow these Steps to install react with vite:
+SimpleApp is a lightweight and easy-to-use application where user can save there images with messages.
 
-- Enter your project name like: react-Vite
+## Features
 
-- Package name same as project name
+- Quick setup and installation
+- Developer-friendly environment
+- Lightweight and efficient
 
-- Select a framework by pressing down arrow key
+## Installation
 
-- Select a Language variant
+1. Clone the repository:
+  ```bash
+  git clone https://github.com/your-username/SimpleApp.git
+  ```
+2. Navigate to the project directory:
+  ```bash
+  cd SimpleApp
+  ```
+3. Install dependencies:
+  ```bash
+  npm install
+  ```
 
-- Go into your project folder
-```
-cd react-Vite
-```
-- Run these commands in terminal
-```
-npm i 
-```
-**OR** 
-```
-npm install
-```
+## Usage
 
-### Follow these steps to install tailwindcss:
-- Run these commands in terminal
-```
-npm install -D tailwindcss@3 postcss autoprefixer
-```
-```
-npx tailwindcss init -p
-```
+After installation, you can start the development server using the command below.
 
-#### Now check your project folder it contains `tailwind.config.js` file.
-- Add these code stuff in content
-
- #### ` tailwind.config.js`
-```
-content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-```
-
-#### Now Add the Tailwind directives to your Css files
-
-- Add these tailwind imports in your all Css files 
-
-#### `index.css`
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-#### `App.css`
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-
-
-## Install essential dependicies
-
-Install Redux JS toolkit (RTK)
-```
-npm i @reduxjs/toolkit
-```
-
-Install Redux
-
-```
-npm i react-redux
-```
-
-Install Router Dom
-
-```
-npm i react-router-dom
-```
-
-Install html parser
-
-```
-npm i html-react-parser
-```
-
-Install Appwrite
-
-```
-npm i appwrite
-```
-
-Install tinymce
-
-```
-npm i @tinymce/tinymce-react
-```
-
-Install react hook
-```
-npm i react-hook-form
-```
-
-## Now Run your Project
-
-```
+```bash
 npm run dev
 ```

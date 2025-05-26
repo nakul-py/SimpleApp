@@ -1,12 +1,117 @@
-# React + Vite
+# SimpleApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#  Create React projects with Vite and Tailwindcss
 
-Currently, two official plugins are available:
+```
+npm create vite@latest
+```
+### Follow these Steps to install react with vite:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Enter your project name like: react-Vite
 
-## Expanding the ESLint configuration
+- Package name same as project name
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Select a framework by pressing down arrow key
+
+- Select a Language variant
+
+- Go into your project folder
+```
+cd react-Vite
+```
+- Run these commands in terminal
+```
+npm i 
+```
+**OR** 
+```
+npm install
+```
+
+### Follow these steps to install tailwindcss:
+- Run these commands in terminal
+```
+npm install -D tailwindcss@3 postcss autoprefixer
+```
+```
+npx tailwindcss init -p
+```
+
+#### Now check your project folder it contains `tailwind.config.js` file.
+- Add these code stuff in content
+
+ #### ` tailwind.config.js`
+```
+content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+```
+
+#### Now Add the Tailwind directives to your Css files
+
+- Add these tailwind imports in your all Css files 
+
+#### `index.css`
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+#### `App.css`
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+
+
+## Install essential dependicies
+
+Install Redux JS toolkit (RTK)
+```
+npm i @reduxjs/toolkit
+```
+
+Install Redux
+
+```
+npm i react-redux
+```
+
+Install Router Dom
+
+```
+npm i react-router-dom
+```
+
+Install html parser
+
+```
+npm i html-react-parser
+```
+
+Install Appwrite
+
+```
+npm i appwrite
+```
+
+Install tinymce
+
+```
+npm i @tinymce/tinymce-react
+```
+
+Install react hook
+```
+npm i react-hook-form
+```
+
+## Now Run your Project
+
+```
+npm run dev
+```
